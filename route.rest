@@ -1,0 +1,26 @@
+GET http://localhost:3400/users
+
+###
+POST http://localhost:3400/users
+Content-Type: application/json
+
+{
+    "email":"mnculwana@gmail.com",
+    "name":"Siphosethu",
+    "contact":"0670058114",
+    "password":"0655496997"
+
+}
+
+###
+
+GET  http://localhost:3400/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.bW5jdWx3YW5hQGdtYWlsLmNvbQ.coHJhNpWVqAX8tHUjJGMQv0BcsqwXVpH0LuEgMiIwHg
+
+###
+PATCH http://localhost:3400/users
+
+{
+    "email":"mnculwana@gmail.com",
+    "password":"0655496997"
+}
