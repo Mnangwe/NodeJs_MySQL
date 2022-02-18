@@ -46,11 +46,11 @@ router.get('/:id', authenticateToken,(req,res) => {
 router.put('/:id', authenticateToken, (req, res) => {
     let day = new Date()
   const id = req.params.id
-  const { title, body, date, password, avatar, about } = req.body
+  const { title, body } = req.body
   let sql = `UPDATE posts SET `
    if(title) sql += `post_title = '${title}'`
    if(body) sql += `post_body = '${body}'`
-    if(title || body) sql += `post_date = ${day}`
+    if(title || body) sql += `post_date = '${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}'`
    sql += `WHERE post_id = '${id}'`;
     con.query(sql, (err, result) => {
       if (err) throw err;
